@@ -22,10 +22,10 @@ coverage:
 
 build:
 	go env
-	env GO111MODULE=on go build -ldflags '$(LDFLAGS)' -o bin/${PROJECT_NAME} ./main.go
+	env GO111MODULE=on go build -ldflags '$(LDFLAGS)' -o bin/${PROJECT_NAME} ./*.go
 
 release:
-	env GO111MODULE=on GOOS=linux go build -ldflags '$(LDFLAGS)' -o bin/${PROJECT_NAME} ./main.go
+	env GO111MODULE=on GOOS=linux go build -ldflags '$(LDFLAGS)' -o bin/${PROJECT_NAME} ./*.go
 
 clean:
 	rm -f ./bin/${PROJECT_NAME}
